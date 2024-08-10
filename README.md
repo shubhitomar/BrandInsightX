@@ -166,6 +166,7 @@ for review in soup.find_all('div', {'data-hook': 'review'}):
        **Saved Correctly:** Verified the file is saved correctly and opened using Excel.
 
 
+
 ## **4. Final Adjustments**
    
   - **Objective:**
