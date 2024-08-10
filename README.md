@@ -67,17 +67,6 @@ page = requests.get(URL, headers=headers)
 
 # Parse the page with BeautifulSoup
 soup = BeautifulSoup(page.content, "html.parser")
-
-# Find all review elements by their data-hook attribute
-reviews = soup.find_all(attrs={"data-hook": "review"})
-
-# Extract and print the relevant content of each review
-for review in reviews:
-    review_title = review.find(attrs={"data-hook": "review-title"}).get_text(strip=True)
-    review_body = review.find(attrs={"data-hook": "review-body"}).get_text(strip=True)
-    
-    print(f"Title: {review_title}")
-    print(f"Review: {review_body}\n")
 ```
 
 ### - **Problems Encountered:**
