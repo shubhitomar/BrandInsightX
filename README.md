@@ -127,21 +127,31 @@ from selenium.webdriver.chrome.options import Options
 
   - **Steps Taken:**
 
-       **Scraped Reviews:**
+       **Installed library**
+    
+    ```pip install openpyxl```
+
+    **Scraped Reviews:**
 
 ```reviews = []
- for review in soup.find_all('div', {'data-hook': 'review'}):
- title = review.find('a', {'data-hook': 'review-title'}).text.strip()
- body = review.find('span', {'data-hook': 'review-body'}).text.strip()
- reviews.append({'Title': title, 'Body': body})
+for review in soup.find_all('div', {'data-hook': 'review'}):
+    title = review.find('a', {'data-hook': 'review-title'}).get_text(strip=True)
+    body = review.find('span', {'data-hook': 'review-body'}).get_text(strip=True)
+    rating = review.find('i', {'data-hook': 'review-star-rating'}).get_text(strip=True)
+    reviews.append({
+        'Title': title,
+        'Rating': rating,
+        'Body': body
+    })
 ```
 
-  **Converted to DataFrame and Saved to Excel:**
+  **Converted to DataFrame :**
 
-```import pandas as pd
-df = pd.DataFrame(reviews)
-df.to_excel('amazon_reviews.xlsx', index=False)
-```
+   ```   df = pd.DataFrame(reviews)     ```
+
+  **Exported to Excel:**
+  
+   ```   df.to_excel('amazon_reviews.xlsx', index=False)     ```
 
    - **Problems Encountered:**
 
@@ -193,9 +203,8 @@ from selenium.webdriver.common.by import By
 
 ## Exporting Data to Excel:
 
-```import pandas as pd
-df = pd.DataFrame(reviews)
-df.to_excel('amazon_reviews.xlsx', index=False)
+```df = pd.DataFrame(reviews)
+   df.to_excel('amazon_reviews.xlsx', index=False)
 ```
 
 ## Summary:
