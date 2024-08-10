@@ -20,28 +20,28 @@ Scraped and analyzed reviews for each product available from the store on differ
 
 ## **1. Initial Setup and Problem Encountered**
 
-  ### - **Objective:**
-    Extract reviews from an Amazon product page.
+  ### - **Objective:** 
+  Extract reviews from an Amazon product page.
 
-   ###- **Steps Taken:**
+   ### - **Steps Taken:**
 
    **Imported Required Libraries in Python:**
 
-         ```import requests
-            from bs4 import BeautifulSoup
-         ```
+```import requests
+ from bs4 import BeautifulSoup
+ ```
  
    **Attempted to Scrape Data using Python:**
 
-          ```URL = 'https://www.amazon.in/gp/aw/d/B0CMDTNB9P/'
-             headers = { "User-Agent": "Mozilla/5.0 ..."}
-             page = requests.get(URL, headers=headers)
-             soup = BeautifulSoup(page.content, "html.parser")
-             ```
+```URL = 'https://www.amazon.in/gp/aw/d/B0CMDTNB9P/'
+headers = { "User-Agent": "Mozilla/5.0 ..."}
+page = requests.get(URL, headers=headers)
+soup = BeautifulSoup(page.content, "html.parser")
+```
 
 ### - **Problems Encountered:**
 
-      **No reviews found:** The script was unable to locate review blocks.
+  **No reviews found:** The script was unable to locate review blocks.
 
 - **Solutions:**
  
@@ -50,23 +50,23 @@ Scraped and analyzed reviews for each product available from the store on differ
 
 
 
-**2. Pagination and Advanced Scraping**
+## **2. Pagination and Advanced Scraping**
    
    - **Objective:**
-      Handle pagination to scrape reviews from multiple pages.
+     Handle pagination to scrape reviews from multiple pages.
 
    - **Steps Taken:**
 
         **Selenium for Pagination:**
 
-           ```from selenium import webdriver
-           from selenium.webdriver.chrome.service import Service
-           from selenium.webdriver.common.by import By
-           from selenium.webdriver.chrome.options import Options
-           ```
+```from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+```
   
-       **Configured Chrome WebDriver:**
-           Downloaded chromedriver and set up the path.
+  **Configured Chrome WebDriver:**
+   Downloaded chromedriver and set up the path.
 
   - **Problems Encountered:**
 
@@ -79,7 +79,7 @@ Scraped and analyzed reviews for each product available from the store on differ
 
 
 
-**3. Review Extraction and Saving**
+## **3. Review Extraction and Saving**
    
   - **Objective:**
          Extract reviews and save them to an Excel file.
@@ -88,20 +88,21 @@ Scraped and analyzed reviews for each product available from the store on differ
 
        **Scraped Reviews:**
 
-           ```reviews = []
-           for review in soup.find_all('div', {'data-hook': 'review'}):
-           title = review.find('a', {'data-hook': 'review-title'}).text.strip()
-           body = review.find('span', {'data-hook': 'review-body'}).text.strip()
-           reviews.append({'Title': title, 'Body': body})
-           ```
+```reviews = []
+ for review in soup.find_all('div', {'data-hook': 'review'}):
+ title = review.find('a', {'data-hook': 'review-title'}).text.strip()
+ body = review.find('span', {'data-hook': 'review-body'}).text.strip()
+ reviews.append({'Title': title, 'Body': body})
+```
 
-       **Converted to DataFrame and Saved to Excel:**
+  **Converted to DataFrame and Saved to Excel:**
 
-         ```import pandas as pd
-         df = pd.DataFrame(reviews)
-         df.to_excel('amazon_reviews.xlsx', index=False)```
+```import pandas as pd
+df = pd.DataFrame(reviews)
+df.to_excel('amazon_reviews.xlsx', index=False)
+```
 
-  - **Problems Encountered:**
+   - **Problems Encountered:**
 
        **Incorrect Attribute Names:** Errors in attribute names while scraping.
   
@@ -114,8 +115,7 @@ Scraped and analyzed reviews for each product available from the store on differ
        **Saved Correctly:** Verified the file is saved correctly and opened using Excel.
 
 
-
-**4. Final Adjustments**
+## **4. Final Adjustments**
    
   - **Objective:**
         Ensure the correct functionality and file handling.
