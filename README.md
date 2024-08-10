@@ -38,8 +38,8 @@ from bs4 import BeautifulSoup
    **Attempted to Scrape Data using Python:**
 
 ```
-# Connecting to the website
 
+# Connecting to the website
 URL = 'https://www.amazon.in/gp/aw/d/B0CMDTNB9P/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=1d0c45f61c45e81f8a92c016b4cc8062&hsa_cr_id=0&qid=1723127243&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&ref_=sbx_be_s_sparkle_lsi4d_asin_0_price&pd_rd_w=KljCJ&content-id=amzn1.sym.df9fe057-524b-4172-ac34-9a1b3c4e647d%3Aamzn1.sym.df9fe057-524b-4172-ac34-9a1b3c4e647d&pf_rd_p=df9fe057-524b-4172-ac34-9a1b3c4e647d&pf_rd_r=1ZZF8R8DY69VY73N4DF5&pd_rd_wg=7Hl0A&pd_rd_r=a9c6b55f-311d-4706-b7cf-acf69aa1779b'
 
 headers = {
@@ -122,7 +122,9 @@ from selenium.webdriver.chrome.options import Options
 
     **Scraped Reviews:**
 
-```reviews = []
+```
+reviews = []
+
 for review in soup.find_all('div', {'data-hook': 'review'}):
     title = review.find('a', {'data-hook': 'review-title'}).get_text(strip=True)
     body = review.find('span', {'data-hook': 'review-body'}).get_text(strip=True)
@@ -132,6 +134,14 @@ for review in soup.find_all('div', {'data-hook': 'review'}):
         'Rating': rating,
         'Body': body
     })
+
+# Check if any reviews were found and print them
+if reviews:
+    for review in reviews:
+        print(f"Title: {review['Title']}\nRating: {review['Rating']}\nBody: {review['Body']}\n")
+else:
+    print("No reviews found.")
+
 ```
 
   **Converted to DataFrame :**
