@@ -31,7 +31,8 @@ Scraped and analyzed reviews for each product available from the store on differ
 
 ```!pip install pandas```
 
-```import requests
+```
+import requests
 from bs4 import BeautifulSoup
 ```
  
