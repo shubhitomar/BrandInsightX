@@ -26,17 +26,58 @@ Scraped and analyzed reviews for each product available from the store on differ
    ### - **Steps Taken:**
 
    **Imported Required Libraries in Python:**
+   
+```!pip install nltk```
+
+```!pip install pandas```
 
 ```import requests
- from bs4 import BeautifulSoup
- ```
+from bs4 import BeautifulSoup
+```
  
    **Attempted to Scrape Data using Python:**
 
-```URL = 'https://www.amazon.in/gp/aw/d/B0CMDTNB9P/'
-headers = { "User-Agent": "Mozilla/5.0 ..."}
+```
+# Connecting to the website
+
+URL = 'https://www.amazon.in/gp/aw/d/B0CMDTNB9P/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=1d0c45f61c45e81f8a92c016b4cc8062&hsa_cr_id=0&qid=1723127243&sr=1-1-e0fa1fdd-d857-4087-adda-5bd576b25987&ref_=sbx_be_s_sparkle_lsi4d_asin_0_price&pd_rd_w=KljCJ&content-id=amzn1.sym.df9fe057-524b-4172-ac34-9a1b3c4e647d%3Aamzn1.sym.df9fe057-524b-4172-ac34-9a1b3c4e647d&pf_rd_p=df9fe057-524b-4172-ac34-9a1b3c4e647d&pf_rd_r=1ZZF8R8DY69VY73N4DF5&pd_rd_wg=7Hl0A&pd_rd_r=a9c6b55f-311d-4706-b7cf-acf69aa1779b'
+
+headers = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br, zstd",
+    "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",
+    "Dnt": "1",
+    "Host": "www.amazon.in",
+    "Priority": "u=0, i",
+    "Referer": "https://www.youtube.com/",
+    "Sec-Ch-Ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": "\"Windows\"",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "cross-site",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "X-Amzn-Trace-Id": "Root=1-66b4d8cc-22162f4a0c03e60a11711d6a"
+}
+
+# Get the page content
 page = requests.get(URL, headers=headers)
+
+# Parse the page with BeautifulSoup
 soup = BeautifulSoup(page.content, "html.parser")
+
+# Find all review elements by their data-hook attribute
+reviews = soup.find_all(attrs={"data-hook": "review"})
+
+# Extract and print the relevant content of each review
+for review in reviews:
+    review_title = review.find(attrs={"data-hook": "review-title"}).get_text(strip=True)
+    review_body = review.find(attrs={"data-hook": "review-body"}).get_text(strip=True)
+    
+    print(f"Title: {review_title}")
+    print(f"Review: {review_body}\n")
 ```
 
 ### - **Problems Encountered:**
