@@ -6,6 +6,7 @@
 
   
 ### Project Overview
+---
 BrandInsightX offers an in-depth analysis of customer feedback for a retail store chain across online platforms using advanced data aggregation and NLP. It evaluates product performance, service quality, delivery, packaging, and pricing. The insights drive operational efficiency and customer experience improvements, enhancing market positioning and business growth.
 
 - **Objective**: This project goes beyond conventional sentiment analysis by delving into detailed reviews across various platforms to assess specific aspects of customer experience. 
@@ -21,7 +22,7 @@ BrandInsightX offers an in-depth analysis of customer feedback for a retail stor
 
 
 # Data Collection 
-
+---
 Scraped and analyzed reviews for each product available from the store on different platforms, extracted the reviews, and saved them in a structured format using Python.
 
 ## **1. Initial Setup and Problem Encountered**
@@ -193,6 +194,8 @@ else:
 
 # Commands Used:
 
+---
+
 ## Scraping Data:
 
    ```import requests
@@ -219,9 +222,16 @@ This stage of the project involved web scraping, handling data pagination, and e
 
 
 
+|Heading1|Heading2|
+|--------|--------|
+|Column1|Column2|
+|Python|Sql|
 
+`column1`
 
+**bold**
 
+*italic*
 
 
 
