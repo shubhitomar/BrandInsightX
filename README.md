@@ -1,4 +1,10 @@
 # BrandInsightX
+
+## Table of contents
+- [Project overview](#project-overview)
+- [Data Collection](#data-collection)
+
+  
 ### Project Overview
 BrandInsightX offers an in-depth analysis of customer feedback for a retail store chain across online platforms using advanced data aggregation and NLP. It evaluates product performance, service quality, delivery, packaging, and pricing. The insights drive operational efficiency and customer experience improvements, enhancing market positioning and business growth.
 
@@ -210,4 +216,25 @@ from selenium.webdriver.common.by import By
 
 ## Summary:
 This stage of the project involved web scraping, handling data pagination, and exporting data to an Excel file for all products available from the brand on different platforms. The journey included troubleshooting path issues, handling data extraction errors, and ensuring correct file-saving procedures.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
