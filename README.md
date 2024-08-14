@@ -264,6 +264,84 @@ This stage of the project involved web scraping, handling data pagination, and e
 ---
 
 
+# Data Preprocessing and Analysis
+
+**Libraries and Frameworks Used:**
+- **pandas**: For data manipulation and analysis.
+- **numpy**: For numerical computations.
+- **scikit-learn**: For implementing machine learning algorithms,
+  particularly LatentDirichletAllocation (LDA) for topic modeling.
+- **TextBlob**: For sentiment analysis.
+- **matplotlib**: For data visualization.
+
+**Steps Involved:**
+
+1. **Data Preprocessing:**
+   - **Data Loading:** Loaded the combined dataset from the `review.xlsx` file that consolidated data scraped from various platforms such as Google Maps, Amazon, and Flipkart.
+   - **Data Cleaning:** Removed unnecessary columns and rows that did not contribute to the analysis. Adjusted the required columns to ensure consistency across the dataset.
+
+2. **Topic Modeling:**
+   - **Vectorization:** Converted the textual data into a numerical format using `CountVectorizer` from `sklearn`, which allowed for the transformation of text into a document-term matrix (DTM).
+     
+  ```from sklearn.feature_extraction.text import CountVectorizer
+vectorizer = CountVectorizer(max_df=0.9, min_df=2, stop_words='english')
+dtm = vectorizer.fit_transform(df['cleaned_reviews'])
+```
+
+   - **Latent Dirichlet Allocation (LDA):** Applied the LDA algorithm to the DTM to identify underlying topics within the reviews. The number of topics was determined based on coherence scores, and a final set of 5 topics was chosen for clarity and interpretability.
+
+```# Applying LDA for Topic Modeling
+from sklearn.decomposition import LatentDirichletAllocation
+# Number of topics
+n_topics = 5
+# Initialize LDA model
+lda = LatentDirichletAllocation(n_components=n_topics, random_state=42)
+lda.fit(dtm)
+# Extract topics and their corresponding words
+for i, topic in enumerate(lda.components_):
+    print(f"Top 10 words for topic #{i}:")
+    print([vectorizer.get_feature_names_out()[index] for index in topic.argsort()[-10:]])
+    print("\n")
+```
+   - **Topic Assignment:** Each review was assigned a dominant topic based on the LDA output, helping to categorize the reviews according to the main themes discussed.
+```
+topic_values = lda.transform(dtm)
+df['dominant_topic'] = topic_values.argmax(axis=1)
+```
+
+ - **Displaying top words using scikit-learn and manually validating their coherence:**:
+
+```
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.decomposition import LatentDirichletAllocation
+
+# Assuming 'cleaned_reviews' is your preprocessed text data
+vectorizer = CountVectorizer()
+dtm = vectorizer.fit_transform(df['cleaned_reviews'])
+feature_names = vectorizer.get_feature_names_out()
+
+# Train LDA model
+lda_model = LatentDirichletAllocation(n_components=5, random_state=0)
+lda_model.fit(dtm)
+
+# Function to display top words
+def display_top_words(model, feature_names, n_top_words=10):
+    for topic_idx, topic in enumerate(model.components_):
+        top_words_idx = topic.argsort()[-n_top_words:][::-1]
+        top_words = [feature_names[i] for i in top_words_idx]
+        print(f"Topic #{topic_idx + 1}: {' '.join(top_words)}")
+display_top_words(lda_model, feature_names)
+```
+
+ - **Plotted the bar graph:**
+
+   
+
+3. **Sentiment Analysis:**
+   - **Sentiment Scoring:** Used TextBlob to perform sentiment analysis on the reviews, generating sentiment scores that reflect the polarity of each review (ranging from negative to positive).
+   - **Sentiment Distribution:** Analyzed the distribution of sentiment scores across the identified topics to understand how different aspects of the store's services, products, and overall experience were perceived by customers.
+
+This stage of the project provided a comprehensive understanding of the main themes in customer feedback and the associated sentiment, setting the stage for deeper analysis and actionable insights.
 
 
 
