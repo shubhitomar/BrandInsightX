@@ -4,6 +4,7 @@
 - [Project overview](#project-overview)
 - [Data Collection](#data-collection)
 - [Making the dataset](#making-a-dataset)
+- [Data Preprocessing and Analysis](#data-preprocessing-and-analysis)
 
   
 ### Project Overview
@@ -88,37 +89,7 @@ soup = BeautifulSoup(page.content, "html.parser")
       Ensured the HTML structure was correctly parsed and used accurate tags/attributes for review extraction.
 
 
-
-## **2. Pagination and Advanced Scraping**
-   
-   - **Objective:**
-     Handle pagination to scrape reviews from multiple pages.
-
-   - **Steps Taken:**
-
-        **Selenium for Pagination:**
-
-```from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-```
-  
-  **Configured Chrome WebDriver:**
-   Downloaded chromedriver and set up the path.
-
-  - **Problems Encountered:**
-
-       **Driver Not Found / Path Issue:** The script couldn't find the ChromeDriver executable.
-
-  - **Solutions:**
-
-      **Download and Setup:**
-          Downloaded chromedriver from ChromeDriver Downloads and set the correct path.
-
-
-
-## **3. Review Extraction and Saving**
+## **2. Review Extraction and Saving**
    
   - **Objective:**
          Extract reviews and save them to an Excel file.
@@ -175,7 +146,7 @@ else:
 
 
 
-## **4. Final Adjustments**
+## **3. Final Adjustments**
    
   - **Objective:**
         Ensure the correct functionality and file handling.
@@ -205,13 +176,6 @@ else:
     soup = BeautifulSoup(page.content, "html.parser")
 ```
 
-## Handling Pagination with Selenium:
-
-```from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-```
-
 ## Exporting Data to Excel:
 
 ```df = pd.DataFrame(reviews)
@@ -219,20 +183,7 @@ from selenium.webdriver.common.by import By
 ```
 
 ## Summary:
-This stage of the project involved web scraping, handling data pagination, and exporting data to an Excel file for all products available from the brand on different platforms. The journey included troubleshooting path issues, handling data extraction errors, and ensuring correct file-saving procedures.
-
-
-
-|Heading1|Heading2|
-|--------|--------|
-|Column1|Column2|
-|Python|Sql|
-
-`column1`
-
-**bold**
-
-*italic*
+This stage of the project involved web scraping, and exporting data to an Excel file for all products available from the brand on different platforms. The journey included troubleshooting path issues, handling data extraction errors, and ensuring correct file-saving procedures.
 
 
 # Making a dataset 
@@ -354,7 +305,16 @@ This stage of the project provided a comprehensive understanding of the main the
 
 
 
+|Heading1|Heading2|
+|--------|--------|
+|Column1|Column2|
+|Python|Sql|
 
+`column1`
+
+**bold**
+
+*italic*
 
 
 
