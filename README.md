@@ -336,8 +336,7 @@ display_top_words(lda_model, feature_names)
  - **Plotted the bar graph:**
 The chart highlights which topics are most frequently discussed in the customer reviews. For example, the bar for "Customer Service and Atmosphere" is higher than others, it indicates that this topic is a major area of focus for customers.
 
-![Screenshot 2024-08-14 191231](https://github.com/user-attachments/assets/abdab9d1-3f45-454f-9cb2-293c9c44c7ab)
-   
+![Screenshot 2024-08-14 191818](https://github.com/user-attachments/assets/2077f8eb-3a73-406c-b21d-b5eba99b2537)
 
 3. **Sentiment Analysis:**
    - **Sentiment Scoring:** Used TextBlob to perform sentiment analysis on the reviews, generating sentiment scores that reflect the polarity of each review (ranging from negative to positive).
