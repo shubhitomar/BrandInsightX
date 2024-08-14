@@ -334,7 +334,9 @@ display_top_words(lda_model, feature_names)
 ```
 
  - **Plotted the bar graph:**
+The chart highlights which topics are most frequently discussed in the customer reviews. For example, the bar for "Customer Service and Atmosphere" is higher than others, it indicates that this topic is a major area of focus for customers.
 
+![Screenshot 2024-08-14 191231](https://github.com/user-attachments/assets/abdab9d1-3f45-454f-9cb2-293c9c44c7ab)
    
 
 3. **Sentiment Analysis:**
