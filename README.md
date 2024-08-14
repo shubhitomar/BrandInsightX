@@ -3,6 +3,7 @@
 ## Table of contents
 - [Project overview](#project-overview)
 - [Data Collection](#data-collection)
+- [Making the dataset](#making-a-dataset)
 
   
 ### Project Overview
@@ -234,7 +235,33 @@ This stage of the project involved web scraping, handling data pagination, and e
 *italic*
 
 
+# Making a dataset 
+---
 
+**Data Preparation Stage**
+
+1. **Data Collection and Integration**:
+   - **Source Identification**: Collected data from multiple platforms, including Google Maps, Amazon, and Flipkart.
+   - **File Aggregation**: Merged data files from these platforms into a single dataset. The data was in various formats such as CSV and Excel, which were unified into a single format for consistency.
+
+2. **Data Cleaning**:
+   - **Column and Row Removal**: Removed irrelevant columns and rows that did not contribute to the analysis. This included columns with extraneous information or metadata and rows with incomplete or irrelevant data.
+   - **Column Adjustment**: Reorganized and adjusted columns to ensure consistency across the dataset. This included renaming columns for uniformity, standardizing column formats (e.g., date formats, numerical values), and ensuring that all necessary columns for analysis were present.
+
+3. **Handling Null Values**:
+   - **Identification**: Identified columns and rows with missing values.
+   - **Treatment**: Applied appropriate techniques to handle null values:
+     - **Removal**: Deleted rows with excessive missing values that could not be imputed reliably, ensuring the dataset remained robust and meaningful.
+
+4. **Data Validation**:
+   - **Consistency Check**: Verified that data merged from different sources was coherent and accurately represented. Checked for discrepancies or anomalies that could impact the analysis.
+   - **Quality Assurance**: Conducted a thorough review to ensure the dataset was clean, complete, and ready for analysis. This involved cross-referencing with the original data sources to confirm accuracy.
+
+6. **Final Dataset Preparation**:
+   - **Consolidation**: Created a final, consolidated dataset that included all the necessary data points for analysis.
+   - **Export**: Exported the prepared dataset into a suitable format for further analysis, ensuring compatibility with jupyter notebook.
+
+---
 
 
 
