@@ -318,7 +318,7 @@ This stage of the project provided a comprehensive understanding of the main the
 3. **Balanced Sentiment Areas:**
    - **Quality of the Products & Customer Experiences (0.34)** and **Location-Specific Product Quality & Availability (0.35):** These topics have moderate positive sentiment. The brand should maintain their current standards while looking for opportunities to enhance the quality and availability of products.
 
-
+![Screenshot 2024-08-14 202444](https://github.com/user-attachments/assets/7f15c614-d27a-4504-afed-385cce57d0c3)
 
   # **Strategic Actions**
 ---
