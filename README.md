@@ -338,9 +338,17 @@ The chart highlights which topics are most frequently discussed in the customer 
 
 ![Screenshot 2024-08-14 191818](https://github.com/user-attachments/assets/2077f8eb-3a73-406c-b21d-b5eba99b2537)
 
+ - **Topic Distribution Graph:**
+Pie chart showing the distribution of various topics across the entire dataset of reviews.
+
+![Screenshot 2024-08-14 192228](https://github.com/user-attachments/assets/016ef29c-0dd7-44dd-ad9e-d7cf64d8b44f)
+
 3. **Sentiment Analysis:**
    - **Sentiment Scoring:** Used TextBlob to perform sentiment analysis on the reviews, generating sentiment scores that reflect the polarity of each review (ranging from negative to positive).
    - **Sentiment Distribution:** Analyzed the distribution of sentiment scores across the identified topics to understand how different aspects of the store's services, products, and overall experience were perceived by customers.
+  
+   ![avg sen score](https://github.com/user-attachments/assets/235cee48-1fc5-4c52-81fb-f453e55807a3)
+
 
 This stage of the project provided a comprehensive understanding of the main themes in customer feedback and the associated sentiment, setting the stage for deeper analysis and actionable insights.
 
