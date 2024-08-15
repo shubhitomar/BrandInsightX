@@ -1,4 +1,5 @@
 # BrandInsightX
+![1](https://github.com/user-attachments/assets/e641cf58-b6bd-4ba7-9781-a90cf9abb39a)
 
 ## Table of contents
 - [Project overview](#project-overview)
@@ -27,6 +28,8 @@ BrandInsightX offers an in-depth analysis of customer feedback for a retail stor
 # Data Collection 
 ---
 Scraped and analyzed reviews for each product available from the store on different platforms, extracted the reviews, and saved them in a structured format using Python.
+
+![4](https://github.com/user-attachments/assets/7a169178-8a7c-48fa-9b5c-aedb37e0128b)
 
 ## **1. Initial Setup and Problem Encountered**
 
@@ -189,7 +192,6 @@ This stage of the project involved web scraping, and exporting data to an Excel 
 
 # Making a dataset 
 ---
-
 **Data Preparation Stage**
 
 1. **Data Collection and Integration**:
@@ -233,6 +235,9 @@ This stage of the project involved web scraping, and exporting data to an Excel 
    - **Data Cleaning:** Removed unnecessary columns and rows that did not contribute to the analysis. Adjusted the required columns to ensure consistency across the dataset.
 
 2. **Topic Modeling:**
+   
+   ![6](https://github.com/user-attachments/assets/c31f42d8-60d1-4d4a-ab01-f905931141ef)
+
    - **Vectorization:** Converted the textual data into a numerical format using `CountVectorizer` from `sklearn`, which allowed for the transformation of text into a document-term matrix (DTM).
      
   ```from sklearn.feature_extraction.text import CountVectorizer
@@ -295,7 +300,10 @@ Pie chart showing the distribution of various topics across the entire dataset o
 
 ![Screenshot 2024-08-14 192228](https://github.com/user-attachments/assets/016ef29c-0dd7-44dd-ad9e-d7cf64d8b44f)
 
-3. **Sentiment Analysis:**
+# **Sentiment Analysis:**
+
+   ![7](https://github.com/user-attachments/assets/227af72b-bd32-4597-a474-cc9d6b2af705)
+
    - **Sentiment Scoring:** Used TextBlob to perform sentiment analysis on the reviews, generating sentiment scores that reflect the polarity of each review (ranging from negative to positive).
    - **Sentiment Distribution:** Analyzed the distribution of sentiment scores across the identified topics to understand how different aspects of the store's services, products, and overall experience were perceived by customers.
   
